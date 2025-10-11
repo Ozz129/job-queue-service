@@ -1,22 +1,14 @@
-import { Job, JobStatus } from '../index';
+import { Job } from '../../domain/entities/Job';
+import { JobStatus } from '../../domain/value-objects/JobStatus';
+
 
 export interface JobRepository {
-
-  save(job: Job): Promise<void>;
-
-  findById(id: string): Promise<Job | undefined>;
-
-  findByStatus(status: JobStatus): Promise<Job[]>;
-
-  findEligibleJobs(): Promise<Job[]>;
-
-  findAllPending(): Promise<Job[]>;
-
+  save(job: Job): Promise<Job>;
+  findById(jobId: string): Promise<Job | null>;
   findAll(): Promise<Job[]>;
-
-  delete(id: string): Promise<boolean>;
-
+  findByStatus(status: JobStatus): Promise<Job[]>;
+  getNextEligible(): Promise<Job | null>;
+  getJobCounts(): Promise<Record<JobStatus, number>>;
+  exists(jobId: string): Promise<boolean>;
   count(): Promise<number>;
-
-  clear(): Promise<void>;
 }
