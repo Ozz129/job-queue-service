@@ -1,7 +1,3 @@
-/**
- * Generic job payload
- * Can contain any data specific to the job type
- */
 export type JobPayload = Record<string, any>;
 
 export function validatePayload(payload: JobPayload): void {

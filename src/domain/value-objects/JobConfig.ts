@@ -1,7 +1,3 @@
-/**
- * Job Configuration
- * Contains execution configuration for a job
- */
 export interface JobConfig {
   /**
    * Delay in milliseconds before the job should start executing
@@ -10,9 +6,6 @@ export interface JobConfig {
   delay?: number;
 }
 
-/**
- * Default configuration for jobs
- */
 export const DEFAULT_JOB_CONFIG: Required<JobConfig> = {
   delay: 0,
 };

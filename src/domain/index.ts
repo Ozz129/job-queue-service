@@ -9,3 +9,6 @@ export * from './value-objects/JobResult';
 
 // Factories
 export * from './factories/JobFactory';
+
+// Interfaces
+export * from './interfaces/JobRepository.interface';
