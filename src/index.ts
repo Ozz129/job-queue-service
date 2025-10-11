@@ -1,17 +1,7 @@
-import express from 'express';
-import dotenv from 'dotenv';
+import { startServer } from './infrastructure/http/server';
 
-dotenv.config();
+console.log('='.repeat(50));
+console.log('JOB QUEUE SERVICE');
+console.log('='.repeat(50));
 
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-app.use(express.json());
-
-app.get('/health', (req, res) => {
-  res.json({ status: 'ok', message: 'Job Scheduler is running' });
-});
-
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+startServer();

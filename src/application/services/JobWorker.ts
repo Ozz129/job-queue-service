@@ -25,12 +25,12 @@ export class JobWorker {
       return;
     }
 
-    console.log('🚀 Starting JobWorker...');
+    console.log('Starting JobWorker...');
 
     this.processor.start();
 
     this.isInitialized = true;
-    console.log('✅ JobWorker started successfully');
+    console.log('JobWorker started successfully');
   }
 
   stop(): void {
@@ -39,12 +39,12 @@ export class JobWorker {
       return;
     }
 
-    console.log('🛑 Stopping JobWorker...');
+    console.log('Stopping JobWorker...');
 
     this.processor.stop();
 
     this.isInitialized = false;
-    console.log('✅ JobWorker stopped successfully');
+    console.log('JobWorker stopped successfully');
   }
 
   getRepository(): JobRepository {
@@ -60,7 +60,7 @@ export class JobWorker {
   }
 
   restart(): void {
-    console.log('🔄 Restarting JobWorker...');
+    console.log('Restarting JobWorker...');
     this.stop();
     this.start();
   }
