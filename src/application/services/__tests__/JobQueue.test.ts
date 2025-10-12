@@ -1,10 +1,14 @@
-import { JobQueue } from '../services/JobQueue';
-import { JobFactory } from '../../domain/factories/JobFactory';
-import { JobStatus } from '../../domain/value-objects/JobStatus';
+import { JobQueue } from '../JobQueue';
+import { JobFactory } from '../../../domain/factories/JobFactory';
+import { JobStatus } from '../../../domain/value-objects/JobStatus';
 
-jest.mock('uuid', () => ({
-  v4: jest.fn(() => `test-uuid-${Math.floor(Math.random() * 10000)}`),
-}));
+jest.mock('uuid', () => {
+  let counter = 0;
+  return {
+    v4: jest.fn(() => `test-uuid-${String(counter++ % 10000).padStart(4, '0')}`),
+  };
+});
+
 
 describe('JobQueue', () => {
   let queue: JobQueue;
@@ -216,7 +220,7 @@ describe('JobQueue', () => {
     });
   });
 
-  describe.only('getJobCounts', () => {
+  describe('getJobCounts', () => {
     it('should return counts of jobs by status', () => {
 
       const job1 = JobFactory.createJob({
