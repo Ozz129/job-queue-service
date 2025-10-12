@@ -5,3 +5,7 @@ dist/
 .env
 test10per.js
 testFIFO.js
+coverage/
+.nyc_output/
+**/coverage/
+**/.nyc_output/
