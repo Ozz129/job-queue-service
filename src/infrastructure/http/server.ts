@@ -1,7 +1,7 @@
 import express, { Application } from 'express';
 import { jobWorker } from '../../application/services';
-import { createJobRoutes } from '../../interfaces/routes';
 import dotenv from 'dotenv';
+import { createJobRoutes } from './routes';
 
 dotenv.config();
 

@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { JobController } from '../controllers/JobController';
-import { JobRepository } from '../../domain';
+import { JobRepository } from '../../../domain';
+import { JobController } from '../controllers';
 
 export function createJobRoutes(repository: JobRepository): Router {
   const router = Router();

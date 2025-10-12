@@ -1,5 +1,5 @@
-import { CancelJobUseCase, GetJobStatusUseCase, SubmitJobUseCase } from "../../application/usecases";
-import { Job, JobRepository } from "../../domain";
+import { CancelJobUseCase, GetJobStatusUseCase, SubmitJobUseCase } from "../../../application/usecases";
+import { Job, JobRepository } from "../../../domain";
 import { SubmitJobDTO } from "../dto";
 import { Request, Response } from "express";
 
