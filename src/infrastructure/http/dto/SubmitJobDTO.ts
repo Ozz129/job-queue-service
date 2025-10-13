@@ -1,4 +1,4 @@
-import { JobConfig, JobData } from "../../domain";
+import { JobConfig, JobData } from "../../../domain";
 
 export class SubmitJobDTO {
   static fromRequestBody(body: any): JobData {
