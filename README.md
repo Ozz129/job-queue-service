@@ -311,7 +311,7 @@ The project includes **100+ deterministic unit tests** with coverage of:
 - Mocked randomness for predictable results
 - 100% reproducible
 
-## 🐳 Docker
+## Docker
 
 ### Build and run with Docker Compose (Recommended)
 
@@ -368,7 +368,7 @@ docker run -d \
 - ✅ Health check included (checks every 30s)
 - ✅ Alpine-based for small footprint
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 job-queue-service/
@@ -420,7 +420,7 @@ job-queue-service/
 └── README.md
 ```
 
-## 🎯 Technical Decisions
+## Technical Decisions
 
 ### Why Clean Architecture?
 
@@ -454,13 +454,13 @@ job-queue-service/
 
 ISC
 
-## 👤 Author
+## Author
 
 Developed as part of Kamin Backend Engineer Take-Home Challenge
 
 ---
 
-## 🎉 Quick Start
+## Quick Start
 
 ```bash
 # Install
