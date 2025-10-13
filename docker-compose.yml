@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  job-queue-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: job-queue-service
+    ports:
+      - "52646:52646"
+    environment:
+      - NODE_ENV=production
+      - PORT=52646
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:52646/health', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})"]
+      interval: 30s
+      timeout: 3s
+      start_period: 5s
+      retries: 3
+    networks:
+      - job-queue-network
+
+networks:
+  job-queue-network:
+    driver: bridge

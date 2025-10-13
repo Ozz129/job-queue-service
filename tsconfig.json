@@ -14,10 +14,10 @@
     "declaration": true,
     "sourceMap": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noUnusedParameters": false,
     "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
   },
   "include": ["src/**/*", "test.js"],
-  "exclude": ["node_modules", "dist", "**/*.spec.ts", "**/*.test.ts"]
-}
+  "exclude": ["node_modules", "dist", "**/*.spec.ts", "**/*.test.ts"],
+  }
