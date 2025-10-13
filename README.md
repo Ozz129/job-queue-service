@@ -22,11 +22,8 @@ A robust, TypeScript-based job queue service with in-memory storage, built follo
 - ✅ **Automatic job processing** with 100-2000ms execution time
 - ✅ **Failure simulation** (10% random failure rate)
 - ✅ **Job lifecycle management** (PENDING → RUNNING → COMPLETED/FAILED/CANCELLED)
-- ✅ **RESTful API** with proper HTTP status codes
 - ✅ **Clean Architecture** with clear separation of concerns
-- ✅ **100% deterministic tests** with high coverage
 - ✅ **Docker support** with multi-stage builds
-- ✅ **TypeScript** for type safety
 
 ## Architecture
 
@@ -449,16 +446,6 @@ job-queue-service/
 - Prevents race conditions
 - Single source of truth for the queue
 - Simplifies lifecycle management
-
-## License
-
-ISC
-
-## Author
-
-Developed as part of Kamin Backend Engineer Take-Home Challenge
-
----
 
 ## Quick Start
 
