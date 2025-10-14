@@ -472,3 +472,11 @@ docker-compose up -d
 **Service will be available at: http://localhost:52646**
 
 ---
+
+## Checksums
+
+| Algoritmo | Hash |
+|-----------|------|
+| MD5 | `f4d91c998016c8d6f042141ef5479136` |
+
+Verifica la integridad de tu descarga comparando el hash del archivo con el valor mostrado arriba.
