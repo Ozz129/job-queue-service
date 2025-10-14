@@ -5,7 +5,7 @@ import { createJobRoutes } from './routes';
 
 dotenv.config();
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 52646;
 
 export function createApp(): Application {
   const app = express();
