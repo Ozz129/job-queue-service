@@ -43,23 +43,25 @@ export function createApp(): Application {
   return app;
 }
 
-export function startServer(): void {
+export async function startServer(): void {
   const app = createApp();
 
   console.log('Initializing JobWorker...');
+  await repository.loadFromFile();
+
   jobWorker.start();
 
   const server = app.listen(PORT, async () => {
-    await repository.loadFromFile();
 
-    const currentQueu = repository.count();
+    const currentQueu = await repository.count();
     console.log(`Current job queue length: ${currentQueu}`);
     console.log(`Server listening on port ${PORT}`);
     console.log(`Health check: http://localhost:${PORT}/health`);
   });
       
-  const gracefulShutdown = () => {
+  const gracefulShutdown = async () => {
     console.log('Received shutdown signal, closing gracefully...');
+    await repository.saveToFile();
 
     server.close(() => {
       console.log('HTTP server closed');
