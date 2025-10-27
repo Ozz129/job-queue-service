@@ -29,6 +29,7 @@ export function createApp(): Application {
     });
   });
 
+  const repository = jobWorker.getRepository();
   const jobRoutes = createJobRoutes(repository);
   app.use('/', jobRoutes);
 
@@ -53,18 +54,15 @@ export function startServer(): void {
 
     const currentQueu = repository.count();
     console.log(`Current job queue length: ${currentQueu}`);
-    console.log('Job Queue Service started successfully');
     console.log(`Server listening on port ${PORT}`);
     console.log(`Health check: http://localhost:${PORT}/health`);
   });
-
-  const gracefulShutdown = async () => {
-    console.log('Received shutdown signal, closing gracefully...');
-    await repository.saveToFile();
-
-    server.close(async () => {
-      console.log('HTTP server closed');
       
+  const gracefulShutdown = () => {
+    console.log('Received shutdown signal, closing gracefully...');
+
+    server.close(() => {
+      console.log('HTTP server closed');
 
       jobWorker.stop();
 

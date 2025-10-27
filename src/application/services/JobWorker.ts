@@ -43,8 +43,6 @@ export class JobWorker {
 
     this.processor.stop();
 
-    // here we can add logic to persist the job queue to a file before stopping
-    
     this.isInitialized = false;
     console.log('JobWorker stopped successfully');
   }

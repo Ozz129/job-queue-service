@@ -10,7 +10,6 @@ export class JobQueue {
   }
 
   addJob(job: Job): void {
-    // here we can add logic to persist the job into a JSON file
     this.jobs.set(job.id, job);
   }
 
@@ -92,5 +91,4 @@ export class JobQueue {
       JobFactory.isTerminal(job)
     );
   }
-  
 }
